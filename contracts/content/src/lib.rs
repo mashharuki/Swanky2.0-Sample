@@ -137,8 +137,9 @@ mod content {
 
             // get all content data
             for id in 0..=current_last_id {
-                let content = self.contents.get(&id).unwrap().clone();
-                contents_info.push(content);
+                if let Some(content) = self.contents.get(&id) {
+                    contents_info.push(content);
+                }
             } 
              
             contents_info
@@ -158,7 +159,7 @@ mod content {
             url: String,
             nft: String,
             creator: String
-        ) {
+        ) -> Result<(), ()> {
             // create content info
             let content_info = ContentInfo {
                 content_id: self.content_last_id,
@@ -172,21 +173,27 @@ mod content {
                 nft_address: nft,
                 creator_address: creator,
             };
-            // push
-            self.contents.insert(self.content_last_id, &content_info);
+
             // increment
             self.content_last_id += 1;
+            // push
+            self.contents.insert(self.content_last_id, &content_info);
+
+            Ok(())
         }
 
         /**
          * set image url
          */
         #[ink(message)]
-        pub fn setImageUrl(&mut self, id:u64, new_url:String){
+        pub fn setImageUrl(&mut self, id:u64, new_url:String) -> Result<(), ()> {
+            // get current content info
+            let mut new_content = self.contents.get(&id).unwrap();
             // update image url
-            let mut content = self.contents.get(&id).unwrap();
-            content.image_url = new_url;
-            
+            new_content.image_url = new_url;
+            self.contents.insert(&id, &new_content);
+
+            Ok(())
         }
 
         /**

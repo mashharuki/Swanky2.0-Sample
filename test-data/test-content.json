@@ -1,0 +1,14 @@
+{
+    "title": "Sample title2",
+    "intro": "Sample introduction2",
+    "content": "Sample content2",
+    "quizs": [
+      "Sample question2 1",
+      "Sample question2 2",
+      "Sample question2 3"
+    ],
+    "answer": "1",
+    "imageUrl": "https://example.com/sample_image2.png",
+    "nftAddress": "0x1234567890123456789012345678901234567890",
+    "creatorAddress": "0x1234567890123456789012345678901234567890"
+}

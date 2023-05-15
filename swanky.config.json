@@ -22,7 +22,25 @@
     "flipper": {
       "name": "flipper",
       "deployments": [],
+      "language": "ink",
+      "build": {
+        "timestamp": 1684136345160,
+        "artifactsPath": "artifacts/flipper/1684136345160"
+      }
+    },
+    "nft": {
+      "name": "nft",
+      "deployments": [],
       "language": "ink"
+    },
+    "content": {
+      "name": "content",
+      "deployments": [],
+      "language": "ink",
+      "build": {
+        "timestamp": 1684156585636,
+        "artifactsPath": "artifacts/content/1684156585636"
+      }
     }
   },
   "networks": {

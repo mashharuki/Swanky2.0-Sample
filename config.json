@@ -1,5 +1,7 @@
 {
-  "projectFiles": ["contracts/**/*"],
+  "projectFiles": [
+    "contracts/nft/*"
+  ],
   "artifactsPath": "artifacts",
   "typechainGeneratedPath": "typedContract"
 }

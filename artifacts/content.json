@@ -1,6 +1,6 @@
 {
   "source": {
-    "hash": "0xc0775c46d90da4bb44de753264a1eedf2228bc0098c934c0c6606b42a3e2924c",
+    "hash": "0x234a82a00c503e36d10bb9c538fb0a78618545c9e0de81c34cd05df8f79b3364",
     "language": "ink! 4.0.0",
     "compiler": "rustc 1.69.0",
     "build_info": {
@@ -65,31 +65,31 @@
         "displayName": [
           "AccountId"
         ],
-        "type": 12
+        "type": 14
       },
       "balance": {
         "displayName": [
           "Balance"
         ],
-        "type": 14
+        "type": 16
       },
       "blockNumber": {
         "displayName": [
           "BlockNumber"
         ],
-        "type": 16
+        "type": 18
       },
       "chainExtension": {
         "displayName": [
           "ChainExtension"
         ],
-        "type": 17
+        "type": 19
       },
       "hash": {
         "displayName": [
           "Hash"
         ],
-        "type": 15
+        "type": 17
       },
       "maxEventTopics": 4,
       "timestamp": {
@@ -241,7 +241,7 @@
             "ink",
             "MessageResult"
           ],
-          "type": 4
+          "type": 11
         },
         "selector": "0xc73ce2a8"
       },
@@ -278,7 +278,7 @@
             "ink",
             "MessageResult"
           ],
-          "type": 4
+          "type": 11
         },
         "selector": "0x2d62b63c"
       },
@@ -306,7 +306,7 @@
             "ink",
             "MessageResult"
           ],
-          "type": 11
+          "type": 13
         },
         "selector": "0xce7d9f75"
       },
@@ -334,7 +334,7 @@
             "ink",
             "MessageResult"
           ],
-          "type": 11
+          "type": 13
         },
         "selector": "0xa8d9602f"
       }
@@ -739,6 +739,90 @@
               {
                 "fields": [
                   {
+                    "type": 12
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 6
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 12
+          },
+          {
+            "name": "E",
+            "type": 6
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 5
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 5
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 5
+          },
+          {
+            "name": "E",
+            "type": 5
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
                     "type": 1
                   }
                 ],
@@ -773,13 +857,13 @@
       }
     },
     {
-      "id": 12,
+      "id": 14,
       "type": {
         "def": {
           "composite": {
             "fields": [
               {
-                "type": 13,
+                "type": 15,
                 "typeName": "[u8; 32]"
               }
             ]
@@ -793,7 +877,7 @@
       }
     },
     {
-      "id": 13,
+      "id": 15,
       "type": {
         "def": {
           "array": {
@@ -804,7 +888,7 @@
       }
     },
     {
-      "id": 14,
+      "id": 16,
       "type": {
         "def": {
           "primitive": "u128"
@@ -812,13 +896,13 @@
       }
     },
     {
-      "id": 15,
+      "id": 17,
       "type": {
         "def": {
           "composite": {
             "fields": [
               {
-                "type": 13,
+                "type": 15,
                 "typeName": "[u8; 32]"
               }
             ]
@@ -832,7 +916,7 @@
       }
     },
     {
-      "id": 16,
+      "id": 18,
       "type": {
         "def": {
           "primitive": "u32"
@@ -840,7 +924,7 @@
       }
     },
     {
-      "id": 17,
+      "id": 19,
       "type": {
         "def": {
           "variant": {}

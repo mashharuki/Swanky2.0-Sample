@@ -1,5 +1,11 @@
 # Swanky2.0-Sample
 
+## デプロイ済みのコントラクト
+
+| No. | コントラクト名      | Contract UI     | ネットワーク |
+| --- | ----------------------------------------------- | ---------------------------- | ------------ |
+| 1   | Content | [YxeQPrU75g7Vv9biMw27jFqjfLU5ansb5ryqvgG7QN2W8VG](https://contracts-ui.substrate.io/contract/YxeQPrU75g7Vv9biMw27jFqjfLU5ansb5ryqvgG7QN2W8VG) | Shibuya      |
+
 ## 動いた環境
 
 - swanky

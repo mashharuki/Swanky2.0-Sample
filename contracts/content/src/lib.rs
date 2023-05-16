@@ -71,8 +71,8 @@ mod content {
                 ],
                 answer: 1,
                 image_url: "https://example.com/sample_image.png".to_string(),
-                nft_address: "0x1234567890123456789012345678901234567890".to_string(),
-                creator_address: "0x1234567890123456789012345678901234567890".to_string(),
+                nft_address: "a6WkJRaZcy6cVkvRQmRmd1TVhAc1Dfq3d7cmpGUjjn9736d".to_string(),
+                creator_address: "5DwLfNQqkLpDoKkHqZCC4EMcFjkn2sbEzqF3JVCZHx6zHoqq".to_string(),
             };
 
             // init data
@@ -104,8 +104,8 @@ mod content {
                 ],
                 answer: 1,
                 image_url: "https://example.com/sample_image.png".to_string(),
-                nft_address: "0x1234567890123456789012345678901234567890".to_string(),
-                creator_address: "0x1234567890123456789012345678901234567890".to_string(),
+                nft_address: "a6WkJRaZcy6cVkvRQmRmd1TVhAc1Dfq3d7cmpGUjjn9736d".to_string(),
+                creator_address: "5DwLfNQqkLpDoKkHqZCC4EMcFjkn2sbEzqF3JVCZHx6zHoqq".to_string(),
             };
 
             // init data

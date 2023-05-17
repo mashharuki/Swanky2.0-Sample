@@ -24,22 +24,26 @@
       "deployments": [],
       "language": "ink",
       "build": {
-        "timestamp": 1684136345160,
-        "artifactsPath": "artifacts/flipper/1684136345160"
+        "timestamp": 1684327555482,
+        "artifactsPath": "artifacts/flipper/1684327555482"
       }
     },
     "nft": {
       "name": "nft",
       "deployments": [],
-      "language": "ink"
+      "language": "ink",
+      "build": {
+        "timestamp": 1684335676389,
+        "artifactsPath": "artifacts/nft/1684335676389"
+      }
     },
     "content": {
       "name": "content",
       "deployments": [],
       "language": "ink",
       "build": {
-        "timestamp": 1684248121606,
-        "artifactsPath": "artifacts/content/1684248121606"
+        "timestamp": 1684327870119,
+        "artifactsPath": "artifacts/content/1684327870119"
       }
     }
   },

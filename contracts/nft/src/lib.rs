@@ -69,16 +69,23 @@ pub mod nft {
 		 * new メソッド
 		 */
         #[ink(constructor, payable)]
-        pub fn new() -> Self {
+        pub fn new(
+            nft_name: PreludeString,
+            nft_symbol: PreludeString,
+			nft_description: PreludeString,
+            nft_image_uri :PreludeString,
+		) -> Self {
             let mut _instance = Self::default();
 			_instance._init_with_owner(_instance.env().caller());
 			//  _instance._mint_to(_instance.env().caller(), Id::U8(1)).expect("Can mint");
 			// get colleciton id
 			let collection_id = _instance.collection_id();
 			// set name & symbol attribute
-			_instance._set_attribute(collection_id.clone(), String::from("name"), String::from("WasmNFT"));
-			_instance._set_attribute(collection_id.clone(), String::from("symbol"), String::from("WTF"));
-			_instance._set_attribute(collection_id, String::from("baseUri"), String::from("https://gateway.pinata.cloud/ipfs/QmdwZBwsEKNpc9uUgUzsgiGb2uYM9X1aca9Ezgz1pR79Jo/"));
+			_instance.set_nft_name(nft_name);
+			_instance.set_nft_symbol(nft_symbol);
+			_instance.set_nft_description(nft_description);
+			_instance.set_nft_iamge(nft_image_uri);
+			// set max supply last_token_id own_nfts
 			_instance.max_supply = 100_000_000_000_000_000;
 			_instance.last_token_id = 0;
 			_instance.own_nfts = Mapping::default();
@@ -258,8 +265,8 @@ pub mod nft {
 		 */
 		#[ink(message)]
 		pub fn get_iamge(&self) -> Result<PreludeString, PSP34Error> {
-			let value = self.get_attribute(self.collection_id(),String::from("image"),);
-			let image = PreludeString::from_utf8(value.unwrap()).unwrap();
+			let value = Some(self.get_attribute(self.collection_id(),String::from("image"),));
+			let image = PreludeString::from_utf8(value.unwrap().unwrap()).unwrap();
 			Ok(image)
 		}
 
@@ -268,8 +275,8 @@ pub mod nft {
 		 */
 		#[ink(message)]
 		pub fn get_nft_description(&self) -> Result<PreludeString, PSP34Error> {
-			let value = self.get_attribute(self.collection_id(),String::from("description"),);
-			let description = PreludeString::from_utf8(value.unwrap()).unwrap();
+			let value = Some(self.get_attribute(self.collection_id(),String::from("description"),));
+			let description = PreludeString::from_utf8(value.unwrap().unwrap()).unwrap();
 			Ok(description)
 		}		
     }
@@ -280,6 +287,15 @@ pub mod nft {
         use super::*;
         use crate::nft::PSP34Error::*;
         use ink::env::test;
+		use ink::prelude::string::{
+			String as PreludeString,
+		};
+		use openbrush::traits::String;
+
+		const NFT_NAME: &str = "Learn WASM NFT";
+		const NFT_SYMBOL: &str = "WTF";
+		const NFT_BASE_URI: &str = "https://bafybeib5ixaris66ajoickapsv35fqqzkihaqkygukanrg3ibzcw6z65qq.ipfs.nftstorage.link/";
+		const NFT_DESCRIPTION: &str = "WASMの学習コンテンツをクリアした証です。";
 
         const PRICE: Balance = 100_000_000_000_000_000;
 		const BASE_URI: &str = "https://gateway.pinata.cloud/ipfs/QmdwZBwsEKNpc9uUgUzsgiGb2uYM9X1aca9Ezgz1pR79Jo/";
@@ -289,7 +305,13 @@ pub mod nft {
 		 * 初期化メソッド
 		 */
         fn init() -> NFT {
-            NFT::new()
+            let nft = NFT::new(
+				NFT_NAME.to_string(),
+				NFT_SYMBOL.to_string(),
+				NFT_BASE_URI.to_string(),
+				NFT_DESCRIPTION.to_string()
+			);
+			nft
         }
 
 		/**
@@ -326,7 +348,7 @@ pub mod nft {
 
             assert_eq!(sh34.total_supply(), 0);
 
-            test::set_value_transferred::<ink_env::DefaultEnvironment>(
+            test::set_value_transferred::<ink::env::DefaultEnvironment>(
                 PRICE * num_of_mints as u128,
             );
 

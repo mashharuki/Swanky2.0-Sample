@@ -81,10 +81,16 @@ pub mod nft {
 			// get colleciton id
 			let collection_id = _instance.collection_id();
 			// set name & symbol attribute
-			_instance.set_nft_name(nft_name);
-			_instance.set_nft_symbol(nft_symbol);
-			_instance.set_nft_description(nft_description);
-			_instance.set_nft_iamge(nft_image_uri);
+			let res = _instance.set_nft_name(nft_name);
+			let res2 = _instance.set_nft_symbol(nft_symbol);
+			let res3 = _instance.set_nft_description(nft_description);
+			let res4 = _instance.set_nft_iamge(nft_image_uri);
+
+			//std::println!("set NFT Name Result: {:?}", res);
+			//std::println!("set NFT Symbol Result: {:?}", res2);
+			//std::println!("set NFT Description Result: {:?}", res3);
+			//std::println!("set NFT Image Result: {:?}", res4);
+
 			// set max supply last_token_id own_nfts
 			_instance.max_supply = 100_000_000_000_000_000;
 			_instance.last_token_id = 0;
